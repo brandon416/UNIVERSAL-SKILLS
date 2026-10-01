@@ -1,0 +1,11 @@
+{
+  "skill": "pwa-review",
+  "test_cases": [
+    {"input": "pwa review https://example.com", "should_trigger": true},
+    {"input": "audit this PWA manifest and service worker", "should_trigger": true},
+    {"input": "is this app installable on iOS as a PWA", "should_trigger": true},
+    {"input": "run Lighthouse and only give me the performance score", "should_trigger": false},
+    {"input": "review this pull request for React bugs", "should_trigger": false},
+    {"input": "explain service workers in general, no site", "should_trigger": false}
+  ]
+}

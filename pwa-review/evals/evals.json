@@ -1,0 +1,33 @@
+{
+  "skill": "pwa-review",
+  "test_cases": [
+    {
+      "name": "url_audit_uses_script_and_rubric",
+      "input": "pwa review https://example.com",
+      "assertions": [
+        "Runs or instructs scripts/collect_pwa.py before scoring",
+        "Scores against the 192-point checklist",
+        "Returns grade, category table, critical issues, and fixes",
+        "Does not require WebFetch or /pwa-review"
+      ]
+    },
+    {
+      "name": "missing_manifest_is_critical_zero",
+      "input": "Audit this PWA. HTML has no manifest link and /manifest.json 404s.",
+      "assertions": [
+        "Marks missing manifest as critical",
+        "Scores manifest compliance 0/20",
+        "Continues with the other categories"
+      ]
+    },
+    {
+      "name": "ios_safe_area_called_out",
+      "input": "Check iOS install for https://app.example. Viewport meta has no viewport-fit=cover and there are no apple-touch-startup-image links.",
+      "assertions": [
+        "Reads iOS limits",
+        "Flags missing viewport-fit=cover and missing splash screens",
+        "Does not award advanced-manifest splash points"
+      ]
+    }
+  ]
+}
